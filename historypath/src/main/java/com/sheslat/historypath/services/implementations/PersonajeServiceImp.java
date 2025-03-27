@@ -36,7 +36,7 @@ public class PersonajeServiceImp extends GenericServiceImp<Personaje, Long> impl
     public Personaje update(Personaje obj) throws Exception {
         validatePersonaje(obj);
         if (!repository.existsById(obj.getId())) {
-            throw new EntityNotFoundException("La bestia con id " + obj.getId() + " no existe");
+            throw new EntityNotFoundException("El personaje con id " + obj.getId() + " no existe");
         }
         return repository.save(obj);
     }
@@ -45,7 +45,7 @@ public class PersonajeServiceImp extends GenericServiceImp<Personaje, Long> impl
     @Transactional
     public void delete(Long id) throws Exception {
         if (!repository.existsById(id)) {
-            throw new EntityNotFoundException("La berstia con id " + id + " no existe");
+            throw new EntityNotFoundException("El personaje con id " + id + " no existe");
         }
         repository.deleteById(id);
     }

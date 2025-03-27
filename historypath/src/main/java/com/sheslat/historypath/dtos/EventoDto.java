@@ -13,5 +13,5 @@ public class EventoDto {
     private Long id;
     private String nombre;
     private String descripcion;
-    private Long lugarId;
+    private LugarDto lugar;
 }

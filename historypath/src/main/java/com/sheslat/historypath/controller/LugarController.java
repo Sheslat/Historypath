@@ -32,8 +32,8 @@ public class LugarController {
         return ResponseEntity.ok(lugarMapper.toDto(lugarCreado));
     }
 
-    @PutMapping
-    public ResponseEntity<LugarDto> update(@RequestBody LugarDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<LugarDto> update(@PathVariable Long id,@RequestBody LugarDto dto) throws Exception {
         Lugar lugar = lugarMapper.toEntity(dto);
         Lugar lugarCreado = lugarService.update(lugar);
         return ResponseEntity.ok(lugarMapper.toDto(lugarCreado));

@@ -32,8 +32,8 @@ public class BestiaController {
         return ResponseEntity.ok(bestiaMapper.toDto(bestiaCreada));
     }
 
-    @PutMapping
-    public ResponseEntity<BestiaDto> update(@RequestBody BestiaDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<BestiaDto> update(@PathVariable Long id,@RequestBody BestiaDto dto) throws Exception {
         Bestia bestia = bestiaMapper.toEntity(dto);
         Bestia bestiaCreada = bestiaService.update(bestia);
         return ResponseEntity.ok(bestiaMapper.toDto(bestiaCreada));

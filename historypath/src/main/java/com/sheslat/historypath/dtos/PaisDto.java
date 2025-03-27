@@ -13,6 +13,5 @@ public class PaisDto {
     private Long id;
     private String nombre;
     private String descripcion;
-    private  Long culturaId;
-
+    private  CulturaDto cultura;
 }

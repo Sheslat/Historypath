@@ -8,11 +8,11 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface PersonajeMapper extends GenericMapper<Personaje, PersonajeDto> {
-    @Mapping(source = "lugarId", target = "lugarOrigen.id")
-    @Mapping(source = "razaId", target = "raza.id")
+    //@Mapping(source = "lugarId", target = "lugarOrigen.id")
+    //@Mapping(source = "razaId", target = "raza.id")
     Personaje toEntity(PersonajeDto dto);
 
-    @Mapping(source = "lugarOrigen.id", target = "lugarId")
-    @Mapping(source = "raza.id", target = "razaId")
+    //@Mapping(source = "lugarOrigen.id", target = "lugarId")
+    //@Mapping(source = "raza.id", target = "razaId")
     PersonajeDto toDto(Personaje entity);
 }

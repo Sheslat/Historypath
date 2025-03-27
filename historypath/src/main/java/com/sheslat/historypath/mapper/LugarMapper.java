@@ -9,9 +9,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface LugarMapper extends GenericMapper<Lugar, LugarDto> {
 
-    @Mapping(source = "paisId", target = "pais.id")
+    //@Mapping(source = "paisId", target = "pais.id")
     Lugar toEntity(LugarDto dto);
 
-    @Mapping(source = "pais.id", target = "paisId")
+    //@Mapping(source = "pais.id", target = "paisId")
     LugarDto toDto(Lugar entity);
 }

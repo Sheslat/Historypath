@@ -31,8 +31,10 @@ public class CulturaController {
         return ResponseEntity.ok(culturaMapper.toDto(culturaCreada));
     }
 
-    @PutMapping
-    public ResponseEntity<CulturaDto> update(@RequestBody CulturaDto dto) throws Exception {
+    @PutMapping("{id}")
+    public ResponseEntity<CulturaDto> update(@PathVariable Long id,@RequestBody CulturaDto dto) throws Exception {
+
+        dto.setId(id);
         Cultura cultura = culturaMapper.toEntity(dto);
         Cultura culturaCreada = culturaService.update(cultura);
         return ResponseEntity.ok(culturaMapper.toDto(culturaCreada));

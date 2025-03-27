@@ -13,7 +13,7 @@ public class PersonajeDto {
     private Long id;
     private String nombre;
     private Long edad;
-    private Long razaId;
+    private RazaDto raza;
     private String descripcion;
-    private Long lugarId;
+    private LugarDto lugarOrigen;
 }

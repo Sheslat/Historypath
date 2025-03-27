@@ -13,5 +13,5 @@ public class LugarDto {
     private Long id;
     private String nombre;
     private String descripcion;
-    private Long paisId;
+    private PaisDto pais;
 }

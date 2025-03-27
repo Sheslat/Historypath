@@ -24,15 +24,15 @@ public class EventoController {
         this.eventoMapper = eventoMapper;
     }
 
-    @PostMapping
+    @PostMapping("(id)")
     public ResponseEntity<EventoDto> create(@RequestBody EventoDto dto) throws Exception {
         Evento evento = eventoMapper.toEntity(dto);
         Evento eventoCreado = eventoService.create(evento);
         return ResponseEntity.ok(eventoMapper.toDto(eventoCreado));
     }
 
-    @PutMapping
-    public ResponseEntity<EventoDto> update(@RequestBody EventoDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<EventoDto> update(@PathVariable Long id,@RequestBody EventoDto dto) throws Exception {
         Evento evento = eventoMapper.toEntity(dto);
         Evento eventoCreado = eventoService.update(evento);
         return ResponseEntity.ok(eventoMapper.toDto(eventoCreado));

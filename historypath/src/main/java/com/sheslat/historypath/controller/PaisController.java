@@ -33,14 +33,14 @@ public class PaisController {
         return ResponseEntity.ok(paisMapper.toDto(paisCreado));
     }
 
-    @PutMapping
-    public ResponseEntity<PaisDto> update(@RequestBody PaisDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<PaisDto> update(@PathVariable Long id,@RequestBody PaisDto dto) throws Exception {
         Pais pais = paisMapper.toEntity(dto);
         Pais paisCreado = paisService.update(pais);
         return ResponseEntity.ok(paisMapper.toDto(paisCreado));
     }
 
-    @DeleteMapping("(id)")
+    @DeleteMapping("{id}")
     public ResponseEntity<PaisDto> delete(@PathVariable Long id) throws Exception {
         paisService.delete(id);
         return ResponseEntity.noContent().build();

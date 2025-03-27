@@ -32,8 +32,8 @@ public class PersonajeController {
         return ResponseEntity.ok(personajeMapper.toDto(personajeCreado));
     }
 
-    @PutMapping
-    public ResponseEntity<PersonajeDto> update(@RequestBody PersonajeDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<PersonajeDto> update(@PathVariable Long id,@RequestBody PersonajeDto dto) throws Exception {
         Personaje personaje = personajeMapper.toEntity(dto);
         Personaje personajeCreado = personajeService.update(personaje);
         return ResponseEntity.ok(personajeMapper.toDto(personajeCreado));

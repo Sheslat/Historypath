@@ -32,8 +32,8 @@ public class RazaController {
         return ResponseEntity.ok(razaMapper.toDto(razaCreada));
     }
 
-    @PutMapping
-    public ResponseEntity<RazaDto> update(@RequestBody RazaDto dto) throws Exception {
+    @PutMapping("(id)")
+    public ResponseEntity<RazaDto> update(@PathVariable Long id,@RequestBody RazaDto dto) throws Exception {
         Raza raza = razaMapper.toEntity(dto);
         Raza razaCreada = razaService.update(raza);
         return ResponseEntity.ok(razaMapper.toDto(razaCreada));
